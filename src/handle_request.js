@@ -43,6 +43,7 @@ function handleRequest(mockAdapter, resolve, reject, config) {
   }
 
   delete config.adapter;
+  config.method = config.method.toLowerCase();
   mockAdapter.history[config.method].push(config);
 
   var handler = utils.findHandler(
